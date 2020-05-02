@@ -1,6 +1,5 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 const resetParas = document.querySelectorAll('.resultParas p');
-console.log(resetParas);
 
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
@@ -45,6 +44,7 @@ function resetGame() {
     for (let i = 0; i < resetParas.length; i++){
         resetParas[i].textContent = '';
     }
+    
     resetButton.parentNode.removeChild(resetButton)
     guessField.disabled = false;
     guessSubmit.disabled = false;
@@ -63,7 +63,6 @@ function setGameOver() {
     document.body.append(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
-
 
 guessSubmit.addEventListener('click', checkGuess);
 
