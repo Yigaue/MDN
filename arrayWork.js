@@ -10,7 +10,7 @@ let data  = [
 data.map((book) => book.price + 200);
 let addedPrice = data.map((book) => book.price + 200);
 
-// array filter 
+// array filter testing
 addedPrice.filter((price) => price < 300);
 
 data.map(item => {
@@ -47,5 +47,26 @@ for(let i = 0; i < data.length; i++){
          });
     } else {
 halfOfPrice.push(item);
+    }
+}
+
+// Array filter 
+
+let expensiveItems = data.filter(item => item.price > 100)
+
+
+//  using for loop
+expensiveItems = [];
+for (let i = 0; i < data.length; i++){
+    if (data[i].price > 100) {
+        expensiveItems.push(data[i]);
+    }
+}
+
+// alternatively
+for (let i = 0; i < length; i++){
+    const item = data[i];
+    if (item.price > 100) {
+        expensiveItems.push(item);
     }
 }
