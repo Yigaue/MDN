@@ -2,10 +2,10 @@
 [1, 5, 6, 7, 2].map((item) => item * 10);
 
 let data  = [
-    {id: 1, title: 'Nite watch', price: 33},
-    {id: 2,  title: 'what I want', price: 12},
-    {id: 3, title: 'Mercy at last', price: 405},
-    {id: 4, title: 'Nothting between', price: 550}
+    {id: 1, title: 'Nite watch', price: 33, promo:false},
+    {id: 2,  title: 'what I want', price: 12, promo:true},
+    {id: 3, title: 'Mercy at last', price: 405, promo:true},
+    {id: 4, title: 'Nothting between', price: 550, promo:false}
 ];
 data.map((book) => book.price + 200);
 let addedPrice = data.map((book) => book.price + 200);
@@ -100,4 +100,19 @@ for (i = 0; i < data.length; i++) {
     let item = data[i];
     total += item.price; 
 }
-consoleResult(total);
+
+// array some
+let isInpromo = data.some(item => item.promo)
+
+let total_price = isInpromo ? 600 : data.reduce((prev, next) => prev + next.price, 0);
+
+// using for loop
+isInpromo = false;
+for (i = 0; i < data.length; i++){
+    item = data[i];
+    if (item.promo) {
+        isInpromo = true;
+        break;
+    }
+}
+
