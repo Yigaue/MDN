@@ -70,3 +70,34 @@ for (let i = 0; i < length; i++){
         expensiveItems.push(item);
     }
 }
+
+// array reduced
+
+let qty = [1, 2, 3, 4, 5];
+
+let linear = qty.reduce((prev, next) => {
+    console.log(`prev: ${prev}, next: ${next}`);
+    return prev + next;
+}, 1);
+console.log(`reduced: ${linear}`)
+
+let geometric = qty.reduce((prev, next) => {
+    console.log(`prev: ${prev}, next: ${next}`);
+    return prev * next;
+},1);
+
+let reduced = data.map(item => item.price).reduce((prev, next) => prev + next);
+ 
+function consoleResult(value) {
+    console.log(value);
+}
+
+reduced = data.reduce((prev, next) => prev + next.price, 0);
+
+let total = 0;
+//  using for loop
+for (i = 0; i < data.length; i++) {
+    let item = data[i];
+    total += item.price; 
+}
+consoleResult(total);
