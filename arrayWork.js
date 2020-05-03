@@ -23,3 +23,29 @@ data.map(item => {
     }
     return item;
 });
+
+// using spread operator
+data.map(item => {
+    if (item.id === 1) {
+        return {
+            ...item,
+            price: item.price / 2
+        };
+    }
+    return item;
+});
+
+//  using for loop
+let halfOfPrice = [];
+for(let i = 0; i < data.length; i++){
+    let item = data[i];
+    if (item.id === 1){
+         halfOfPrice.push({
+            ...item,
+            price: item.price/2
+            
+         });
+    } else {
+halfOfPrice.push(item);
+    }
+}
