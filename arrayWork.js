@@ -116,3 +116,24 @@ for (i = 0; i < data.length; i++){
     }
 }
 
+//Array every
+
+data  = [
+    {id: 1, title: 'Nite watch', price: 33, stock:false},
+    {id: 2, title: 'what I want', price: 12, stock:true},
+    {id: 3, title: 'Mercy at last', price: 405, stock:true},
+    {id: 4, title: 'Nothting between', price: 550, stock:false}
+];
+
+isInStock = data.every(item => item.stock);
+
+isInStock = true;
+//  using for loop 
+for (i = 0; i < data.length; i++){
+    item = data[i];
+    if (!item.stock) {
+        isInStock = false;
+        break
+    }
+}
+consoleResult(isInStock);
