@@ -136,4 +136,23 @@ for (i = 0; i < data.length; i++){
         break
     }
 }
-consoleResult(isInStock);
+
+// Array find
+let options = ['a', 'b', 'c', 'd'];
+let search = options.find(option => option === 'a')
+
+search = data.find(item => item.id === 2)
+if (search) {
+    search = `${item.title}  ${(item.price / 100).toFixed(2)}`;
+}
+
+// using for loop
+
+for (let i = 0; i < data.length; i++){
+    item = data[i];
+    if (item.id === 3) {
+        search = item;
+        break;
+    }
+}
+consoleResult(search);
